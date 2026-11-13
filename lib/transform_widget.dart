@@ -111,7 +111,7 @@ class _DemoFlipRotateRectState extends State<DemoFlipRotateRect> {
                     //   ),
                     // ),
                     // _buildImageToolBottomMedia(),
-                    _buildSnapScrollList(),
+                    // _buildSnapScrollList(),
                     _buildFlipControls(),
                   ],
                 ),
@@ -141,8 +141,6 @@ class _DemoFlipRotateRectState extends State<DemoFlipRotateRect> {
 
   int _indexSelected = 0;
   final List<GlobalKey> _itemKeys = List.generate(1000, (index) => GlobalKey());
-  final ScrollController _scrollController = ScrollController();
-
   Widget _buildSnapScrollList() {
     return Positioned(
       bottom: 112,
@@ -275,9 +273,7 @@ class _DemoFlipRotateRectState extends State<DemoFlipRotateRect> {
       x: horizontal ? -1 : 1,
       y: horizontal ? 1 : -1,
     );
-    return Matrix4Transform.from(
-      reflection.m..multiply(matrix4transform.m),
-    );
+    return Matrix4Transform.from(reflection.m..multiply(matrix4transform.m));
   }
 
   void _onScaleStart(ScaleStartDetails details) {
